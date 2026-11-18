@@ -5,231 +5,247 @@
 <title>THE WORLD — Wednesday 18 November 2026</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1024px; height: 1024px; overflow: hidden; }
   body {
-    width: 1024px; height: 1024px; overflow: hidden;
-    background: #FDFBF6;
-    font-family: 'Noto Serif', 'DejaVu Serif', serif;
-    color: #141414;
+    font-family: "Noto Serif", "DejaVu Serif", serif;
+    background: #fdfcf7;
+    color: #111;
+    padding: 12px 18px 10px 18px;
   }
-  .page { position: relative; width: 1024px; height: 1024px; }
-  /* ---------- Crimson masthead band: the signature ---------- */
+  /* ---------- MASTHEAD ---------- */
   .masthead {
-    background: #B3122E; color: #fff;
-    height: 80px; display: flex; align-items: center; justify-content: center;
+    background: #a4121f;
+    color: #fff;
+    text-align: center;
+    padding: 5px 14px 6px 14px;
     position: relative;
   }
-  .masthead h1 {
-    font-family: 'Noto Serif Display', 'DejaVu Serif', serif;
-    font-weight: 900; font-size: 62px; letter-spacing: 10px;
-    line-height: 1; color: #fff;
-  }
-  .masthead .dot { color: #FFD34D; }
   .masthead .side {
     position: absolute; top: 50%; transform: translateY(-50%);
-    font-family: 'DejaVu Sans', sans-serif; font-size: 10px; letter-spacing: 2px;
-    color: #FFD9DE; text-transform: uppercase;
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 10px; letter-spacing: 1px; color: #f3d9d9;
   }
-  .masthead .side.l { left: 18px; text-align: left; }
-  .masthead .side.r { right: 18px; text-align: right; }
+  .masthead .side.left { left: 14px; }
+  .masthead .side.right { right: 14px; }
+  .masthead h1 {
+    font-family: "Noto Serif Display", "Noto Serif", serif;
+    font-weight: 900;
+    font-size: 52px;
+    line-height: 1;
+    letter-spacing: 6px;
+  }
+  .masthead h1 .gold { color: #e8b93b; }
   .datebar {
-    background: #1B1B1B; color: #fff; height: 26px;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'DejaVu Sans', sans-serif; font-size: 12px; letter-spacing: 4px;
-    text-transform: uppercase;
+    background: #111;
+    color: #e8b93b;
+    text-align: center;
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 11px; font-weight: bold;
+    letter-spacing: 3px;
+    padding: 4px 0;
   }
-  .datebar b { color: #FFD34D; font-weight: 700; }
-  /* ---------- Lead story ---------- */
-  .lead { padding: 10px 16px 0 16px; }
-  .kicker {
-    color: #B3122E; font-family: 'DejaVu Sans', sans-serif;
-    font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+  .datebar .w { color: #fff; font-weight: normal; letter-spacing: 2px; }
+  /* ---------- LEAD + TRUMP ROW ---------- */
+  .toprow { display: flex; gap: 14px; margin-top: 8px; }
+  .feature { flex: 1; }
+  .feature img {
+    width: 100%; height: 148px; object-fit: cover; display: block;
+    border: 1px solid #bbb;
   }
-  .lead h2 {
-    font-family: 'Noto Serif Display', 'DejaVu Serif', serif;
-    font-weight: 900; font-size: 31px; line-height: 1.08; letter-spacing: 0.2px;
-    margin: 3px 0 3px 0;
+  .feature h2 {
+    font-size: 23px; line-height: 1.08; font-weight: 900;
+    margin-top: 5px;
   }
-  .lead p.sub {
-    font-size: 14.5px; line-height: 1.25; color: #333; font-style: italic;
-    margin-bottom: 6px;
+  .feature .sub {
+    font-size: 12.5px; line-height: 1.3; color: #333; margin-top: 4px;
   }
-  .lead img {
-    width: 100%; height: 176px; object-fit: cover; display: block;
-    border-top: 3px solid #B3122E;
+  .feature .cap {
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 9px; color: #666; margin-top: 3px; font-style: italic;
   }
-  .caption {
-    font-family: 'DejaVu Sans', sans-serif; font-size: 10px; color: #666;
-    padding-top: 3px; line-height: 1.3;
-  }
-  /* ---------- Navy numbers strip ---------- */
+  /* ---------- NUMBERS STRIP ---------- */
   .numbers {
-    background: #0F2A4A; color: #fff; height: 54px; margin: 8px 0 0 0;
-    display: flex; align-items: stretch;
+    background: #12233d; color: #fff;
+    display: flex; justify-content: space-around;
+    padding: 6px 6px; margin-top: 8px;
   }
-  .numbers .num {
-    flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
-    border-left: 1px solid rgba(255,255,255,0.22);
+  .numbers .num { text-align: center; }
+  .numbers .num b {
+    display: block; color: #e8b93b;
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 17px; line-height: 1.1;
   }
-  .numbers .num:first-child { border-left: none; }
-  .numbers .v {
-    font-family: 'Noto Serif Display', 'DejaVu Serif', serif;
-    font-weight: 900; font-size: 21px; color: #FFD34D; line-height: 1;
+  .numbers .num span {
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 9px; letter-spacing: 0.5px; color: #dfe6f2;
   }
-  .numbers .l {
-    font-family: 'DejaVu Sans', sans-serif; font-size: 8.5px; letter-spacing: 1.2px;
-    color: #DCE6F2; text-transform: uppercase; margin-top: 3px;
+  .numbers .lbl {
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 9px; letter-spacing: 2px; color: #9fb2d4;
+    align-self: center; font-weight: bold;
   }
-  .numbers .title {
-    flex: 0 0 auto; display: flex; align-items: center; padding: 0 12px;
-    font-family: 'DejaVu Sans', sans-serif; font-size: 9px; font-weight: 700;
-    letter-spacing: 2px; color: #FFD34D; text-transform: uppercase;
-    border-right: 1px solid rgba(255,255,255,0.22);
+  /* ---------- 4 PHOTO STORIES ---------- */
+  .photorow { display: flex; gap: 10px; margin-top: 8px; }
+  .photo { flex: 1; }
+  .photo img {
+    width: 100%; height: 90px; object-fit: cover; display: block;
+    border: 1px solid #bbb;
   }
-  /* ---------- Dense 3-column grid ---------- */
-  .grid {
-    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;
-    padding: 10px 16px 0 16px;
+  .photo h3 { font-size: 14px; line-height: 1.12; font-weight: 900; margin-top: 4px; }
+  .photo .sub { font-size: 10.5px; line-height: 1.25; color: #333; margin-top: 2px; }
+  /* ---------- 6 TEXT STORIES ---------- */
+  .textgrid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px 16px; margin-top: 8px;
+    border-top: 2px solid #a4121f; padding-top: 6px;
   }
-  .story img {
-    width: 100%; height: 108px; object-fit: cover; display: block;
-  }
-  .story h3 {
-    font-family: 'Noto Serif Display', 'DejaVu Serif', serif;
-    font-weight: 900; font-size: 16.5px; line-height: 1.12; margin-top: 5px;
-  }
-  .story p {
-    font-size: 11.5px; line-height: 1.3; color: #333; margin-top: 3px;
-  }
-  .story .tag {
-    font-family: 'DejaVu Sans', sans-serif; font-size: 8.5px; font-weight: 700;
-    letter-spacing: 1.5px; color: #B3122E; text-transform: uppercase; margin-top: 5px;
-  }
-  .textcard {
-    border-left: 4px solid #B3122E; background: #fff;
-    padding: 8px 10px; box-shadow: 0 0 0 1px #E8E0D2 inset;
-  }
-  .textcard h3 {
-    font-family: 'Noto Serif Display', 'DejaVu Serif', serif;
-    font-weight: 900; font-size: 16.5px; line-height: 1.12; margin-top: 2px;
-  }
-  .textcard p { font-size: 11.5px; line-height: 1.3; color: #333; margin-top: 3px; }
-  .textcard .tag {
-    font-family: 'DejaVu Sans', sans-serif; font-size: 8.5px; font-weight: 700;
-    letter-spacing: 1.5px; color: #B3122E; text-transform: uppercase;
-  }
-  /* ---------- Brief band ---------- */
+  .txt h3 { font-size: 14px; line-height: 1.12; font-weight: 900; }
+  .txt .sub { font-size: 11px; line-height: 1.28; color: #333; margin-top: 2px; }
+  /* ---------- BRIEF LIST ---------- */
   .briefhead {
-    margin: 10px 16px 0 16px; font-family: 'DejaVu Sans', sans-serif;
-    font-size: 10px; font-weight: 700; letter-spacing: 3px; color: #B3122E;
-    text-transform: uppercase;
+    margin-top: 8px; border-top: 3px solid #111; padding-top: 4px;
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .briefhead h4 {
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 12px; letter-spacing: 2px; color: #a4121f; font-weight: bold;
+  }
+  .briefhead span {
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 9px; color: #666;
   }
   .brief {
-    margin: 0 16px; border-top: 2px solid #141414; padding-top: 6px;
-    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;
+    column-count: 4; column-gap: 14px; margin-top: 5px;
   }
-  .brief .item h4 {
-    font-family: 'Noto Serif Display', 'DejaVu Serif', serif;
-    font-weight: 900; font-size: 14.5px; line-height: 1.15;
+  .brief .item {
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 10px; line-height: 1.28; color: #222;
+    margin-bottom: 2px;
+    break-inside: avoid;
   }
-  .brief .item p { font-size: 11px; line-height: 1.3; color: #333; margin-top: 2px; }
-  .brief .item .tag {
-    font-family: 'DejaVu Sans', sans-serif; font-size: 8.5px; font-weight: 700;
-    letter-spacing: 1.5px; color: #B3122E; text-transform: uppercase;
-  }
-  /* ---------- Footer ---------- */
+  .brief .item b { color: #a4121f; font-weight: bold; }
+  /* ---------- FOOTER ---------- */
   .footer {
-    position: absolute; bottom: 0; left: 0; right: 0; height: 22px;
-    border-top: 2px solid #B3122E; background: #FDFBF6;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'DejaVu Sans', sans-serif; font-size: 10px; letter-spacing: 2.5px;
-    color: #444; text-transform: uppercase;
+    margin-top: 7px; border-top: 1px solid #999; padding-top: 4px;
+    text-align: center;
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 9.5px; letter-spacing: 1.5px; color: #555;
   }
 </style>
 </head>
 <body>
-<div class="page">
-  <div class="masthead">
-    <div class="side l">Est. 2026<br>No. 323</div>
-    <h1>THE WORL<span class="dot">D</span></h1>
-    <div class="side r">Price $2.00<br>Wednesday</div>
-  </div>
-  <div class="datebar">Wednesday <b>&nbsp;18 November 2026&nbsp;</b> — One day, one image</div>
 
-  <div class="lead">
-    <div class="kicker">Gulf Crisis &middot; Lead Story</div>
-    <h2>US STRIKES IRAN AS TEHRAN HITS BAHRAIN AND KUWAIT</h2>
-    <p class="sub">Jets hit IRGC missile site on Qeshm Island; Iran fires drones at US bases, downs MQ-9</p>
-    <img src="assets/gulf.png" alt="US jets over the Gulf at dusk">
-    <div class="caption">US fighter jets over the Strait of Hormuz at dusk as smoke rises from the missile site on Qeshm Island. &mdash; THE WORLD</div>
-  </div>
-
-  <div class="numbers">
-    <div class="title">The Day<br>in Numbers</div>
-    <div class="num"><div class="v">11,000</div><div class="l">Ebola cases</div></div>
-    <div class="num"><div class="v">5,400</div><div class="l">Measles cases</div></div>
-    <div class="num"><div class="v">19</div><div class="l">Killed in crash</div></div>
-    <div class="num"><div class="v">$115.8B</div><div class="l">Nvidia revenue</div></div>
-    <div class="num"><div class="v">16B mi</div><div class="l">Voyager 1 out</div></div>
-  </div>
-
-  <div class="grid">
-    <div class="story">
-      <img src="assets/kerch.png" alt="Damaged Kerch Bridge">
-      <div class="tag">Ukraine</div>
-      <h3>KERCH BRIDGE SPAN FALLS AFTER SECOND UKRAINE STRIKE</h3>
-      <p>Part of road deck drops into strait as Kyiv hits Crimea link again</p>
-    </div>
-    <div class="story">
-      <img src="assets/shenzhen.png" alt="Trump arrives in Shenzhen">
-      <div class="tag">Diplomacy</div>
-      <h3>TRUMP LANDS IN SHENZHEN FOR XI-PUTIN SUMMIT</h3>
-      <p>Three-way talks Thursday as Xi opens APEC in Shenzhen</p>
-    </div>
-    <div class="story">
-      <img src="assets/voyager.png" alt="Voyager 1 in deep space">
-      <div class="tag">Space</div>
-      <h3>VOYAGER 1 REACHES ONE LIGHT-DAY FROM EARTH</h3>
-      <p>16 billion miles out, no human-made object has gone farther</p>
-    </div>
-    <div class="story">
-      <img src="assets/quake.png" alt="Earthquake damage in Papua New Guinea">
-      <div class="tag">Disaster</div>
-      <h3>6.0-MAGNITUDE QUAKE HITS PAPUA NEW GUINEA</h3>
-      <p>Strong tremor strikes island nation; damage being assessed</p>
-    </div>
-    <div class="story">
-      <img src="assets/crash.png" alt="Military plane crash site in Siberia">
-      <div class="tag">Disaster</div>
-      <h3>RUSSIAN MILITARY PLANE CRASHES IN SIBERIA, 19 DEAD</h3>
-      <p>An-12 transport goes down in Kemerovo; all aboard killed</p>
-    </div>
-    <div class="textcard">
-      <div class="tag">Health</div>
-      <h3>EBOLA PASSES 11,000 CASES IN CONGO</h3>
-      <p>Outbreak doubles in three months; 5,400 dead, UN says. Children bear the heaviest toll as the epidemic spreads at a record pace across 67 health zones.</p>
-    </div>
-  </div>
-
-  <div class="briefhead">In Brief &mdash; More of the Day</div>
-  <div class="brief">
-    <div class="item">
-      <div class="tag">Health</div>
-      <h4>US LOSES MEASLES-FREE STATUS AFTER 26 YEARS</h4>
-      <p>5,400 cases, 10 deaths &mdash; worst year since 1991</p>
-    </div>
-    <div class="item">
-      <div class="tag">Markets</div>
-      <h4>NVIDIA POSTS RECORD $115.8B REVENUE</h4>
-      <p>Chipmaker more than doubles sales; board rules out Huang return</p>
-    </div>
-    <div class="item">
-      <div class="tag">Politics</div>
-      <h4>PELTOLA WINS ALASKA SENATE SEAT</h4>
-      <p>Democrats reach 56-44 majority, largest since 2009</p>
-    </div>
-  </div>
-
-  <div class="footer">The World &middot; Wednesday 18 November 2026 &middot; One Day, One Image</div>
+<div class="masthead">
+  <span class="side left">Est. 2026 &middot; No. 323</span>
+  <span class="side right">Price $2.00 &middot; Wednesday</span>
+  <h1>THE W<span class="gold">O</span>RLD</h1>
 </div>
+<div class="datebar">WEDNESDAY 18 NOVEMBER 2026 <span class="w">&nbsp;&middot;&nbsp; ONE DAY, ONE IMAGE &nbsp;&middot;&nbsp; 55 STORIES</span></div>
+
+<div class="toprow">
+  <div class="feature">
+    <img src="assets/gulf.png" alt="Gulf at dusk">
+    <h2>US STRIKES IRAN AS TEHRAN HITS BAHRAIN AND KUWAIT</h2>
+    <div class="sub">Jets hit IRGC missile site on Qeshm Island; Iran fires drones at US bases, downs MQ-9</div>
+    <div class="cap">Smoke rises over the Gulf after US jets struck an IRGC missile site on Qeshm Island.</div>
+  </div>
+  <div class="feature">
+    <img src="assets/trump.png" alt="Trump, Xi and Putin in Shenzhen">
+    <h2>TRUMP LANDS IN SHENZHEN FOR XI-PUTIN SUMMIT</h2>
+    <div class="sub">Three-way talks Thursday as Xi opens APEC in Shenzhen &mdash; first meeting of the three leaders</div>
+    <div class="cap">Trump, Xi and Putin shake hands at the Shenzhen summit &mdash; the day&rsquo;s most watched meeting.</div>
+  </div>
+</div>
+
+<div class="numbers">
+  <span class="lbl">THE DAY<br>IN NUMBERS</span>
+  <div class="num"><b>11,000</b><span>Ebola cases</span></div>
+  <div class="num"><b>5,400</b><span>measles cases</span></div>
+  <div class="num"><b>19</b><span>killed in crash</span></div>
+  <div class="num"><b>$115.8B</b><span>Nvidia revenue</span></div>
+  <div class="num"><b>16B mi</b><span>Voyager 1 out</span></div>
+</div>
+
+<div class="photorow">
+  <div class="photo">
+    <img src="assets/kerch.png" alt="Kerch Bridge">
+    <h3>KERCH BRIDGE SPAN FALLS AFTER SECOND UKRAINE STRIKE</h3>
+    <div class="sub">Part of road deck drops into strait as Kyiv hits Crimea link again</div>
+  </div>
+  <div class="photo">
+    <img src="assets/voyager.png" alt="Voyager 1">
+    <h3>VOYAGER 1 REACHES ONE LIGHT-DAY FROM EARTH</h3>
+    <div class="sub">16 billion miles out, no human-made object has gone farther</div>
+  </div>
+  <div class="photo">
+    <img src="assets/quake.png" alt="Papua quake">
+    <h3>6.0-MAGNITUDE QUAKE HITS PAPUA NEW GUINEA</h3>
+    <div class="sub">Strong tremor strikes island nation; damage being assessed</div>
+  </div>
+  <div class="photo">
+    <img src="assets/crash.png" alt="Siberia crash">
+    <h3>RUSSIAN MILITARY PLANE CRASHES IN SIBERIA, 19 DEAD</h3>
+    <div class="sub">An-12 transport goes down in Kemerovo; all aboard killed</div>
+  </div>
+</div>
+
+<div class="textgrid">
+  <div class="txt"><h3>EBOLA PASSES 11,000 CASES IN CONGO</h3><div class="sub">Outbreak doubles in three months; 5,400 dead, UN says</div></div>
+  <div class="txt"><h3>US LOSES MEASLES-FREE STATUS AFTER 26 YEARS</h3><div class="sub">5,400 cases, 10 deaths &mdash; worst year since 1991</div></div>
+  <div class="txt"><h3>NVIDIA POSTS RECORD $115.8B REVENUE</h3><div class="sub">Chipmaker more than doubles sales; board rules out Huang return</div></div>
+  <div class="txt"><h3>PELTOLA WINS ALASKA SENATE SEAT</h3><div class="sub">Democrats reach 56-44 majority, largest since 2009</div></div>
+  <div class="txt"><h3>ANTHROPIC PRICES IPO AT $83 A SHARE</h3><div class="sub">Claude maker debuts on Nasdaq Thursday, above $70-$78 range</div></div>
+  <div class="txt"><h3>DOW FALLS 1.1% AS GOLD TUMBLES TO $3,735</h3><div class="sub">Stocks mixed on Nvidia earnings; Fed minutes point to more hikes</div></div>
+</div>
+
+<div class="briefhead"><h4>THE DAY IN BRIEF</h4><span>More of Wednesday 18 November 2026</span></div>
+<div class="brief">
+  <div class="item"><b>&#9642;</b> Trump announces trade deal with the Philippines</div>
+  <div class="item"><b>&#9642;</b> Houthis launch five drones at Saudi pipeline</div>
+  <div class="item"><b>&#9642;</b> Trump&rsquo;s Board of Peace accuses Israel and Hamas</div>
+  <div class="item"><b>&#9642;</b> Israel elects Matan Kahana as parliament speaker</div>
+  <div class="item"><b>&#9642;</b> Putin not ready for Ukraine peace talks</div>
+  <div class="item"><b>&#9642;</b> Xi pledges to stand against trade protectionism</div>
+  <div class="item"><b>&#9642;</b> EU proposes &euro;45 billion loan for Ukraine</div>
+  <div class="item"><b>&#9642;</b> Russia plans 20 million drones for Ukraine next year</div>
+  <div class="item"><b>&#9642;</b> Iran shoots down US MQ-9 drone near Hormuz</div>
+  <div class="item"><b>&#9642;</b> Iran targets US Patriot systems in Kuwait</div>
+  <div class="item"><b>&#9642;</b> Tankers hit by mines in Hormuz; crew member missing</div>
+  <div class="item"><b>&#9642;</b> Israeli tanks advance across Gaza cease-fire line</div>
+  <div class="item"><b>&#9642;</b> Israel kills two Hamas commanders in Gaza</div>
+  <div class="item"><b>&#9642;</b> UNICEF: 64 children killed in Yemen since September</div>
+  <div class="item"><b>&#9642;</b> WFP: one hot meal every two days in Gaza</div>
+  <div class="item"><b>&#9642;</b> EU and Indonesia approve trade agreements</div>
+  <div class="item"><b>&#9642;</b> Erez scanner opens for Gaza aid trucks</div>
+  <div class="item"><b>&#9642;</b> Myanmar reviews its ASEAN relationship</div>
+  <div class="item"><b>&#9642;</b> Critical flaw found in Java using AI</div>
+  <div class="item"><b>&#9642;</b> NATO announces next-generation comms strategy</div>
+  <div class="item"><b>&#9642;</b> South Korea&rsquo;s Lee strengthens ties with Beijing</div>
+  <div class="item"><b>&#9642;</b> Japan scrambles jets as Russian aircraft near</div>
+  <div class="item"><b>&#9642;</b> 5.3-magnitude quake strikes Romania</div>
+  <div class="item"><b>&#9642;</b> Cyclone Akvan nears India&rsquo;s east coast</div>
+  <div class="item"><b>&#9642;</b> Torrential rain floods South Florida</div>
+  <div class="item"><b>&#9642;</b> William and Kate meet PM Modi in India</div>
+  <div class="item"><b>&#9642;</b> UK asks to remove Russell Brand&rsquo;s YouTube account</div>
+  <div class="item"><b>&#9642;</b> FA explores challenge to Infantino staying on</div>
+  <div class="item"><b>&#9642;</b> Depardieu admits sexual-assault charge</div>
+  <div class="item"><b>&#9642;</b> Asif Merchant sentenced to 27.5 years</div>
+  <div class="item"><b>&#9642;</b> European court: Atalay must be released</div>
+  <div class="item"><b>&#9642;</b> Fed minutes: more hikes likely; Waller floats 50bp</div>
+  <div class="item"><b>&#9642;</b> UnitedHealth slides 10% on anti-fraud rule</div>
+  <div class="item"><b>&#9642;</b> Palo Alto Networks jumps 10%</div>
+  <div class="item"><b>&#9642;</b> TJX surges 10.7%, Target climbs 7.4%</div>
+  <div class="item"><b>&#9642;</b> Take-Two jumps 7.5% on GTA VI reception</div>
+  <div class="item"><b>&#9642;</b> OpenAI releases GPT-6.2 Astra and Sol</div>
+  <div class="item"><b>&#9642;</b> Senate confirms Anna St. John to Fifth Circuit</div>
+  <div class="item"><b>&#9642;</b> FDA approves Cosentyx for polymyalgia rheumatica</div>
+  <div class="item"><b>&#9642;</b> Chargers beat Ravens 23-20</div>
+  <div class="item"><b>&#9642;</b> Waymo pulls driverless rides from US freeways</div>
+  <div class="item"><b>&#9642;</b> Newsmax sues to unwind Roku-Fox deal</div>
+  <div class="item"><b>&#9642;</b> Netflix and Fox chase 2030 World Cup rights</div>
+</div>
+
+<div class="footer">THE WORLD &middot; WEDNESDAY 18 NOVEMBER 2026 &middot; ONE DAY, ONE IMAGE</div>
+
 </body>
 </html>

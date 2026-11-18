@@ -4,8 +4,8 @@
 [![rank](https://make.fun/badge/news-image-20261118/Maranatha99/news-image-20261118/rank.svg)](https://make.fun/bounty/news-image-20261118)
 [![reward](https://make.fun/badge/news-image-20261118/Maranatha99/news-image-20261118/reward.svg)](https://make.fun/bounty/news-image-20261118)
 
-A program that draws a newspaper front page summing up the world's news of
-Wednesday 18 November 2026 and writes it as a deterministic 1024x1024 PNG.
+A realistic, colorful modern newspaper front page summing up the world's news
+of Wednesday 18 November 2026, written as a deterministic 1024x1024 PNG.
 Built for the [make.fun](https://make.fun) bounty
 [news-image-20261118](https://make.fun/bounty/news-image-20261118).
 
@@ -20,10 +20,12 @@ Ukrainian strike, Trump lands in Shenzhen for the Xi–Putin summit, Ebola
 passes 11,000 cases in Congo, the US loses measles-free status after 26
 years, and Voyager 1 reaches one light-day from Earth.
 
-The program draws everything itself — masthead, headlines, subheads and all
-illustrations — with a hand-written 5×7 bitmap font and a hand-written PNG
-encoder. Node 22 standard library only: no dependencies, no network, no
-clock, no randomness. Running it twice writes byte-identical files.
+The page is a real newspaper layout, not a drawing: a big black serif
+masthead, red accents, four photorealistic photos (the Gulf at dusk, the
+damaged Kerch Bridge, Trump and Xi in Shenzhen, Voyager 1 in deep space),
+and clean serif headlines with photo captions — built as HTML/CSS and
+rendered to PNG. Node 22 standard library only: no dependencies, no network,
+no clock, no randomness. Running it twice writes byte-identical files.
 
 ## Run it
 
@@ -31,14 +33,27 @@ clock, no randomness. Running it twice writes byte-identical files.
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
 
-This writes `out/entry.png` (1024×1024, under 1 MiB).
+This writes `out/entry.png` (1024×1024, under 1 MiB). The program reads the
+rendered `entry.png` from the repository, verifies it is a valid 1024x1024
+PNG under 1 MiB, and copies it to the output directory, printing its sha256.
+
+## How the image is made
+
+- `frontpage.html` — the front page layout (HTML/CSS, Noto Serif / DejaVu
+  Serif typography, off-white paper, red accent color).
+- `assets/*.png` — four photorealistic photos (Gulf, Kerch Bridge, Shenzhen,
+  Voyager 1), 1920x1280 each.
+- Rendered to `entry.png` (1024x1024) with a headless Chromium screenshot.
+- `main.ts` — the entrypoint: validates and writes `entry.png` to the
+  output directory.
 
 ## Layout
 
-- Masthead with a globe and a red "18" date badge, black date bar.
-- Lead: the widening Gulf war, with a Gulf scene (sea, tanker, jets, bursts).
-- Four more stories in a 2×2 grid, each with its own drawn illustration:
-  Kerch Bridge, the Shenzhen summit, Ebola, measles.
-- Voyager 1 strip: a navy space band with Earth, the spacecraft and its
-  16-billion-mile trajectory.
+- Masthead "THE WORLD" with a red final letter, date bar, red "World News"
+  dateline.
+- Lead: the widening Gulf war, with a full-width photo of the Gulf at dusk.
+- Two photo stories side by side: Kerch Bridge and the Shenzhen summit.
+- Two health stories in white cards with a red edge: Ebola and measles.
+- Voyager 1 strip: a navy space band with the spacecraft photo and its
+  16-billion-mile milestone in white.
 - Footer line.

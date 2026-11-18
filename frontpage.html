@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>THE WORLD — Wednesday 18 November 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1024px; height: 1024px; overflow: hidden; }
+  body {
+    background: #fdfcf7;
+    color: #141414;
+    font-family: "Noto Serif", "DejaVu Serif", Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { width: 1024px; height: 1024px; padding: 18px 34px 12px 34px; }
+
+  /* ---- top bar ---- */
+  .topbar {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: "DejaVu Sans", "Noto Sans", sans-serif;
+    font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: #444; border-bottom: 2px solid #141414; padding-bottom: 5px;
+  }
+  .topbar .date { font-weight: bold; color: #141414; }
+  .topbar .price { color: #b3122e; font-weight: bold; }
+
+  /* ---- masthead ---- */
+  .masthead {
+    text-align: center; padding: 6px 0 2px 0;
+    font-family: "Noto Serif Display", "Noto Serif", "DejaVu Serif", serif;
+    font-weight: 900; font-size: 88px; line-height: 1.02; letter-spacing: 3px;
+    color: #111;
+  }
+  .masthead .red { color: #b3122e; }
+  .rule-double { border-top: 4px solid #141414; border-bottom: 1px solid #141414; height: 6px; margin: 2px 0 0 0; }
+  .dateline {
+    text-align: center; font-family: "DejaVu Sans", sans-serif;
+    font-size: 13px; letter-spacing: 4px; text-transform: uppercase;
+    padding: 6px 0 8px 0; border-bottom: 1px solid #999; color: #333;
+  }
+  .dateline b { color: #b3122e; }
+
+  /* ---- lead story ---- */
+  .kicker {
+    font-family: "DejaVu Sans", sans-serif; font-size: 13px; font-weight: bold;
+    letter-spacing: 3px; text-transform: uppercase; color: #b3122e; margin: 10px 0 5px 0;
+  }
+  .lead-head {
+    font-size: 38px; line-height: 1.04; font-weight: 700; letter-spacing: -0.5px;
+  }
+  .lead-sub {
+    font-family: "DejaVu Sans", sans-serif; font-size: 16px; line-height: 1.35;
+    color: #333; margin: 5px 0 7px 0;
+  }
+  .lead-photo { width: 100%; height: 170px; object-fit: cover; display: block; }
+  .caption {
+    font-size: 12px; font-style: italic; color: #666; line-height: 1.35;
+    padding: 5px 0 0 0; border-bottom: 1px solid #bbb; padding-bottom: 7px;
+  }
+
+  /* ---- two-column grid ---- */
+  .grid { display: flex; gap: 26px; margin-top: 10px; }
+  .story { flex: 1; }
+  .story img { width: 100%; height: 108px; object-fit: cover; display: block; }
+  .story .kicker { margin: 7px 0 3px 0; font-size: 12px; }
+  .story h2 { font-size: 21px; line-height: 1.12; font-weight: 700; }
+  .story p {
+    font-family: "DejaVu Sans", sans-serif; font-size: 13px; line-height: 1.4;
+    color: #333; margin-top: 4px;
+  }
+
+  /* ---- accent row: two text stories ---- */
+  .accent { display: flex; gap: 26px; margin-top: 10px; }
+  .accent .box {
+    flex: 1; background: #fff; border-left: 4px solid #b3122e;
+    padding: 8px 14px 8px 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+  .accent .box .tag {
+    font-family: "DejaVu Sans", sans-serif; font-size: 11px; font-weight: bold;
+    letter-spacing: 2.5px; text-transform: uppercase; color: #b3122e;
+  }
+  .accent .box h3 { font-size: 21px; line-height: 1.15; font-weight: 700; margin-top: 3px; }
+  .accent .box p {
+    font-family: "DejaVu Sans", sans-serif; font-size: 13px; line-height: 1.4;
+    color: #333; margin-top: 4px;
+  }
+
+  /* ---- voyager band ---- */
+  .voyager {
+    display: flex; gap: 18px; margin-top: 10px; background: #0a1c33;
+    color: #fff; padding: 10px 14px; align-items: center;
+  }
+  .voyager img { width: 296px; height: 84px; object-fit: cover; display: block; flex-shrink: 0; }
+  .voyager .tag {
+    font-family: "DejaVu Sans", sans-serif; font-size: 11px; font-weight: bold;
+    letter-spacing: 3px; text-transform: uppercase; color: #7fb3e8;
+  }
+  .voyager h3 { font-size: 25px; line-height: 1.15; font-weight: 700; margin-top: 3px; }
+  .voyager p {
+    font-family: "DejaVu Sans", sans-serif; font-size: 13px; line-height: 1.4;
+    color: #c9d6e8; margin-top: 4px;
+  }
+
+  /* ---- footer ---- */
+  .footer {
+    margin-top: 10px; border-top: 2px solid #141414; padding-top: 6px;
+    text-align: center; font-family: "DejaVu Sans", sans-serif;
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: #555;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="topbar">
+    <span>Est. 2026 &nbsp;·&nbsp; No. 322</span>
+    <span class="date">Wednesday, 18 November 2026</span>
+    <span class="price">Price $2.00</span>
+  </div>
+
+  <div class="masthead">THE WORL<span class="red">D</span></div>
+  <div class="rule-double"></div>
+  <div class="dateline"><b>World News</b> &nbsp;·&nbsp; Wednesday 18 November 2026 &nbsp;·&nbsp; One day, one image</div>
+
+  <div class="kicker">The Gulf &mdash; Lead Story</div>
+  <h1 class="lead-head">US STRIKES IRAN AS TEHRAN HITS BAHRAIN AND KUWAIT</h1>
+  <p class="lead-sub">Jets hit IRGC missile site on Qeshm Island; Iran fires drones at US bases, downs MQ-9</p>
+  <img class="lead-photo" src="assets/gulf.png" alt="US jets over the Gulf at dusk">
+  <p class="caption">US jets over the Gulf at dusk after the strikes on Qeshm Island; Iran answered with drone attacks on US bases.</p>
+
+  <div class="grid">
+    <div class="story">
+      <img src="assets/kerch.png" alt="Damaged Kerch Bridge">
+      <div class="kicker">Ukraine</div>
+      <h2>KERCH BRIDGE SPAN FALLS AFTER SECOND UKRAINE STRIKE</h2>
+      <p>Part of road deck drops into strait as Kyiv hits Crimea link again</p>
+    </div>
+    <div class="story">
+      <img src="assets/shenzhen.png" alt="Trump arriving in Shenzhen">
+      <div class="kicker">China</div>
+      <h2>TRUMP LANDS IN SHENZHEN FOR XI-PUTIN SUMMIT</h2>
+      <p>Three-way talks Thursday as Xi opens APEC in Shenzhen</p>
+    </div>
+  </div>
+
+  <div class="accent">
+    <div class="box">
+      <div class="tag">Health</div>
+      <h3>EBOLA PASSES 11,000 CASES IN CONGO</h3>
+      <p>Outbreak doubles in three months; 5,400 dead, UN says</p>
+    </div>
+    <div class="box">
+      <div class="tag">Health</div>
+      <h3>US LOSES MEASLES-FREE STATUS AFTER 26 YEARS</h3>
+      <p>5,400 cases, 10 deaths &mdash; worst year since 1991</p>
+    </div>
+  </div>
+
+  <div class="voyager">
+    <img src="assets/voyager.png" alt="Voyager 1 in deep space">
+    <div>
+      <div class="tag">Space</div>
+      <h3>VOYAGER 1 REACHES ONE LIGHT-DAY FROM EARTH</h3>
+      <p>16 billion miles out, no human-made object has gone farther</p>
+    </div>
+  </div>
+
+  <div class="footer">The World &nbsp;·&nbsp; Wednesday 18 November 2026 &nbsp;·&nbsp; One day, one image</div>
+
+</div>
+</body>
+</html>
